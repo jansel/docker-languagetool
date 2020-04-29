@@ -1,7 +1,4 @@
-FROM debian:stretch
-
-MAINTAINER Silvio Fricke <silvio.fricke@gmail.com>
-
+FROM ubuntu:20.04
 RUN set -ex \
     && mkdir -p /uploads /etc/apt/sources.list.d /var/cache/apt/archives/ \
     && export DEBIAN_FRONTEND=noninteractive \
@@ -9,14 +6,15 @@ RUN set -ex \
     && apt-get update -y \
     && apt-get install -y \
         bash \
-        openjdk-8-jre-headless \
-        unzip
+        default-jre \
+        unzip \
+        wget
 
 ENV VERSION 4.9.1
-ADD https://www.languagetool.org/download/LanguageTool-$VERSION.zip /LanguageTool-$VERSION.zip
 
-RUN unzip LanguageTool-$VERSION.zip \
-    && rm LanguageTool-$VERSION.zip
+RUN wget https://www.languagetool.org/download/LanguageTool-$VERSION.zip && \
+    unzip LanguageTool-$VERSION.zip && \
+    rm LanguageTool-$VERSION.zip
 
 WORKDIR /LanguageTool-$VERSION
 
