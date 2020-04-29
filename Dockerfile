@@ -25,4 +25,4 @@ RUN chmod a+x /start.sh
 RUN mkdir /nonexistent && touch /nonexistent/.languagetool.cfg
 
 CMD [ "/start.sh" ]
-EXPOSE 8010
+EXPOSE 80
