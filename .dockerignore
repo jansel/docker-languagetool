@@ -1,5 +1,4 @@
 *.swp
-*.zip
 .dockerignore
 .git
 .gitignore
