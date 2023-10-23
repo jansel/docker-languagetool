@@ -1,7 +1,7 @@
 FROM openjdk:14-alpine
 RUN apk add --no-cache libgomp gcompat libstdc++
 
-ENV VERSION 6.1
+ENV VERSION 6.3
 
 RUN wget https://www.languagetool.org/download/LanguageTool-$VERSION.zip && \
     unzip LanguageTool-$VERSION.zip && \
