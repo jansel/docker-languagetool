@@ -1,7 +1,7 @@
 FROM eclipse-temurin:21-alpine
 RUN apk add --no-cache libgomp gcompat libstdc++
 
-ENV VERSION 6.3a
+ENV VERSION 6.4
 
 RUN wget https://www.languagetool.org/download/LanguageTool-$VERSION.zip && \
     unzip LanguageTool-$VERSION.zip && \
